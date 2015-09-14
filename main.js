@@ -18,7 +18,7 @@ module.exports = {
      */
     convertPathToImage: function(path, callback){
 
-        if (path.match(/^htt/) || fs.lstatSync(path).isFile()){
+        if (path instanceof Buffer || path.match(/^htt/) || fs.lstatSync(path).isFile()){
 
             // path is valid
             callback(undefined, im(path));
